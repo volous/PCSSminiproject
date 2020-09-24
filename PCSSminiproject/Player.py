@@ -1,6 +1,7 @@
 from main import pygame
 class Player:
 
+<<<<<<< Updated upstream
     def __init__(self, userName, password):
         self.userName = userName
         self.password = password
@@ -23,3 +24,6 @@ playerThree.playerLoses()
 
 print(playerTwo.wins)
 print("Player Three has", playerThree.losses, "loss(es)")
+=======
+    def player(self):
+>>>>>>> Stashed changes
