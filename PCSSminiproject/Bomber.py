@@ -1,23 +1,30 @@
 import time
-import sys
 class Bomb:
 
     # bRad is blastRadius
-    def __init__(self, bRadX, bRadY, bState, bTimer, bMin, bReload):
-
+    def __init__(self, bRadX, bRadY, bState, bSecs, bReload):
         self.bRadX = bRadX
         self.bRadY = bRadY
         self.bState = bState
-        self.bTimer = bTimer
-        self.bMin = bMin
+        self.bSecs = bSecs
         self.bReload = bReload
-    #     timer stuff
-
-        self.start_timer = time.time()
-
+        self.timer_start = False
     def bomb(self):
         pass
 
+    # timer method
     def timer(self):
-        while True:
-            self.bTimer = int(time.time() - self.start_timer) - self.bMin
+        # sets secs to be equal to bSecs
+        secs = self.bSecs
+        # while secs is greater than 0 and timer_start is true secs is -1 per second
+        while secs > 0 and self.timer_start:
+            secs -= 1
+            # sleeps for 1 second and stops the while loop continueing for 1 second
+            time.sleep(1)
+            # of secs is = to 0 code is executed
+            if secs == 0:
+                print("boom")
+                # resets secs to start point
+                secs = self.bSecs
+                # timer_start is set to false again
+                self.timer_start = False
