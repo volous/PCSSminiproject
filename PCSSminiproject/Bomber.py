@@ -19,7 +19,7 @@ class Bomb:
         # while secs is greater than 0 and timer_start is true secs is -1 per second
         while secs > 0 and self.timer_start:
             secs -= 1
-            # sleeps for 1 second and stops the while loop continueing for 1 second
+            # sleeps for 1 second and stops the while loop continuing for 1 second
             time.sleep(1)
             # of secs is = to 0 code is executed
             if secs == 0:
