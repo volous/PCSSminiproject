@@ -6,6 +6,11 @@ from Bomber import Bomb
 pg.init()
 # setting screen height, width and accessible size
 size = width, height = 900, 700
+
+pg.display.set_caption("Bomberman Spin-off Game")
+icon = pg.image.load("Res/bomb_icon.png")
+pg.display.set_icon(icon)
+
 bRadX, bRadY = 10, 10
 # create screen
 screen = pg.display.set_mode((width, height))
