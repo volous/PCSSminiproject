@@ -6,9 +6,10 @@ from Bomber import Bomb
 pg.init()
 # setting screen height, width and accessible size
 size = width, height = 900, 700
+bRadX, bRadY = 10, 10
 # create screen
 screen = pg.display.set_mode((width, height))
-bomb_player_one = Bomb(10, 10, True, 5, True)
+bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 running = True
 # game loop-ish
 while running:
@@ -29,7 +30,7 @@ while running:
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
                 try:
-                    _thread.start_new_thread(bomb_player_one.bomb(), ("Thread-2", 4))
+                    _thread.start_new_thread(bomb_player_one.bomb(), ("Thread-1", 2))
                 except:
                     pass
     pg.display.update()

@@ -1,6 +1,6 @@
 import time
 import _thread
-
+import pygame
 class Bomb:
 
     # bRad is blastRadius
@@ -11,7 +11,7 @@ class Bomb:
         self.bSecs = bSecs
         self.bReload = bReload
         self.timer_start = False
-        self.bomb_state = [1, 2, 3]
+        self.bomb_state = ['1', '2', '3']
 
     def bomb(self):
         # sets secs to be equal to bSecs
