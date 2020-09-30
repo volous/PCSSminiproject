@@ -1,4 +1,6 @@
 import time
+
+
 class Bomb:
 
     # bRad is blastRadius
@@ -9,6 +11,7 @@ class Bomb:
         self.bSecs = bSecs
         self.bReload = bReload
         self.timer_start = False
+
     def bomb(self):
         pass
 

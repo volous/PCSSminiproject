@@ -1,7 +1,6 @@
 
 class Player:
 
-
     def __init__(self, userName, password):
         self.userName = userName
         self.password = password
@@ -15,6 +14,7 @@ class Player:
     def playerLoses(self):
         self.losses += 1
 
+
 playerOne = Player("volous", "Bendoveruwu")
 playerTwo = Player("Luzon", "test")
 playerThree = Player("Fantanious", "nemtkodeord")
@@ -24,6 +24,7 @@ playerThree.playerLoses()
 
 print(playerTwo.wins)
 print("Player Three has", playerThree.losses, "loss(es)")
+
 
 def player(self):
     pass

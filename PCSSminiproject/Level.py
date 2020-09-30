@@ -1,6 +1,4 @@
-
 class Level:
-
 
     def __init__(self, sizeX, sizeY, posX, posY, object):
         self.sizeX = sizeX
@@ -9,17 +7,11 @@ class Level:
         self.posY = posY
         self.object = object
 
+    def level(self):
+        pass
 
     def level(self):
         pass
 
-
-
     def level(self):
         pass
-        
-
-
-    def level(self):
-        pass
-
