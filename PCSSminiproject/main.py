@@ -11,7 +11,8 @@ bomb_player_one = Bomb(10, 10, True, 5, True)
 running = True
 # game loop-ish
 while running:
-    # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set to true and begins countdown
+    # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
+    # to true and begins countdown
     bomb_player_one.timer()
     # checks if there are events in the pygame window
     for event in pg.event.get():
