@@ -1,5 +1,5 @@
 import time
-
+import _thread
 
 class Bomb:
 
@@ -23,7 +23,7 @@ class Bomb:
                 print(self.bomb_state[0])
             if secs == 3:
                 print(self.bomb_state[1])
-            if secs == 1:
+            if secs == 2:
                 print(self.bomb_state[2])
 
     # timer method

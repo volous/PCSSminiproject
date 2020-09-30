@@ -1,3 +1,4 @@
+import _thread
 import pygame as pg
 from Bomber import Bomb
 
@@ -13,7 +14,10 @@ running = True
 while running:
     # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
     # to true and begins countdown
-    bomb_player_one.timer()
+    try:
+        _thread.start_new_thread(bomb_player_one.timer(), ("Thread-1", 2))
+    except:
+        pass
     # checks if there are events in the pygame window
     for event in pg.event.get():
         # if the window closes, it gets closed properly
@@ -24,5 +28,8 @@ while running:
             # if key pressed is space the timer_start is set to true
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
-                bomb_player_one.bomb()
+                try:
+                    _thread.start_new_thread(bomb_player_one.bomb(), ("Thread-2", 4))
+                except:
+                    pass
     pg.display.update()
