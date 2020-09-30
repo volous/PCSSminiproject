@@ -11,9 +11,20 @@ class Bomb:
         self.bSecs = bSecs
         self.bReload = bReload
         self.timer_start = False
+        self.bomb_state = [1, 2, 3]
 
     def bomb(self):
-        pass
+        # sets secs to be equal to bSecs
+        secs = self.bSecs
+        while secs > 0 and self.timer_start:
+            secs -= 1
+            time.sleep(1)
+            if secs == 4:
+                print(self.bomb_state[0])
+            if secs == 3:
+                print(self.bomb_state[1])
+            if secs == 1:
+                print(self.bomb_state[2])
 
     # timer method
     def timer(self):

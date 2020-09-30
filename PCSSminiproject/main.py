@@ -24,4 +24,5 @@ while running:
             # if key pressed is space the timer_start is set to true
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
+                bomb_player_one.bomb()
     pg.display.update()
