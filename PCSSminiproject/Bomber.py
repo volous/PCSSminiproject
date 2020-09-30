@@ -16,9 +16,11 @@ class Bomb:
     def bomb(self):
         # sets secs to be equal to bSecs
         secs = self.bSecs
+        # same timer as in timer method
         while secs > 0 and self.timer_start:
             secs -= 1
             time.sleep(1)
+            # if statements that check for the timer position and prints the corespondent state
             if secs == 4:
                 print(self.bomb_state[0])
             if secs == 3:
