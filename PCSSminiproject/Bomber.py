@@ -1,5 +1,4 @@
 import time
-import _thread
 import pygame
 
 
@@ -23,8 +22,6 @@ class Bomb:
         secs = self.bSecs
         # same timer as in timer method
         while secs > 0 and self.timer_start:
-            secs -= 1
-            time.sleep(1)
             # if statements that check for the timer position and prints the corespondent state
             if secs == 5 and self.timer_start:
                 screen.blit(self.bomb_state_one, (round(10), round(10)))
@@ -32,6 +29,9 @@ class Bomb:
                 screen.blit(self.bomb_state_two, (round(10), round(10)))
             if secs == 1 and self.timer_start:
                 screen.blit(self.bomb_state_three, (round(10), round(10)))
+        secs -= 1
+        time.sleep(1)
+
     # timer method
     def timer(self):
         # sets secs to be equal to bSecs

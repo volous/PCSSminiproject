@@ -10,6 +10,9 @@ class Level:
     def level(self):
         pass
 
+    def postitional_grid(self):
+        pass
+
     def level(self):
         pass
 
