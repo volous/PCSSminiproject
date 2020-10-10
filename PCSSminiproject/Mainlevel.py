@@ -23,14 +23,18 @@ class Level:
     def postitional_grid(self):
         # assigning a color
         black = (0, 0, 0)
+        block_size = 32
         # for loop that, creates a grid from start of level edge to the end
         for i in range(0, 480):
             for j in range(0, 480):
                 # assigning a pygame function that draws a rectangle
-                rect = pg.Rect(217 + i * 32, 117 + j * 32, 32, 32)
+                rect = pg.Rect(217 + i * block_size, 117 + j * block_size, block_size, block_size)
                 # using methods from pygame to draw a rectangle on the src screen,
                 pg.draw.rect(self.screen, black, rect, 1)
-
+        for i in range(0, 480):
+            for j in range(0, 480):
+                rect = pg.Rect((217+block_size) + i * block_size, (117+block_size) + j * block_size, block_size, block_size)
+                pg.draw.rect(self.screen, (125, 125, 125), rect, 1)
     def level2(self):
         pass
 
