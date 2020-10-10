@@ -15,3 +15,5 @@ class Level:
 
     def level(self):
         pass
+
+
