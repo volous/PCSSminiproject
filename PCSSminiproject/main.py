@@ -2,7 +2,7 @@ import _thread
 import pygame as pg
 from Bomber import Bomb
 from Character import Character
-
+from Mainlevel import Level
 # initialize the pygame
 
 pg.init()
@@ -15,6 +15,8 @@ screen = pg.display.set_mode((width, height))
 bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 # instantiating Char class
 char1 = Character(int(width/2), int(height/2))
+level = Level(0, 0, 0, 0, 0)
+
 
 running = True
 # game loop-ish
@@ -23,6 +25,7 @@ while running:
     # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
     # to true and begins countdown
     bomb_player_one.timer()
+
     # checks if there are events in the pygame window
     for event in pg.event.get():
         trigger = pg.key.get_pressed()
@@ -54,5 +57,7 @@ while running:
             bomb_player_one.timer_start = True
             bomb_player_one.bomb()
     screen.fill((0,0,0))
+    level.level(screen)
+    level.postitional_grid(screen)
     pg.draw.rect(screen, (255, 0, 0), (char1.posX, char1.posY, char1.width, char1.height))
     pg.display.update()
