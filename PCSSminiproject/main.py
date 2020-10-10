@@ -14,6 +14,7 @@ bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 running = True
 # game loop-ish
 while running:
+    screen.fill((255, 255, 255))
     # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
     # to true and begins countdown
     bomb_player_one.timer()
@@ -27,6 +28,6 @@ while running:
             # if key pressed is space the timer_start is set to true
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
-                bomb_player_one.bomb()
+                bomb_player_one.bomb(screen)
 
     pg.display.update()
