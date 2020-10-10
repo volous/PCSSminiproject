@@ -16,7 +16,6 @@ class Bomb:
         self.bomb_state_two = pygame.image.load("Res/bomb2.png")
         self.bomb_state_three = pygame.image.load("Res/bomb3.png")
 
-
     def bomb(self, screen):
         # sets secs to be equal to bSecs
         secs = self.bSecs
