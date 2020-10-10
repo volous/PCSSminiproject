@@ -18,6 +18,7 @@ class Level:
         white = (255, 255, 255)
         pg.draw.rect(self.screen, white, (217, 117, 480, 480))
 
+
     # position grid
     def postitional_grid(self):
         # assigning a color
