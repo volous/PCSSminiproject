@@ -21,18 +21,18 @@ level = Level(0, 0, 0, 0, 0, screen)
 running = True
 # game loop-ish
 while running:
-<<<<<<< HEAD
+
     screen.fill((255, 255, 255))
-=======
+
     pg.time.delay(100)
->>>>>>> Test
+
     # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
     # to true and begins countdown
     bomb_player_one.timer()
 
     # checks if there are events in the pygame window
     for event in pg.event.get():
-<<<<<<< HEAD
+
         # if the window closes, it gets closed properly
         if event.type == pg.QUIT:
             running = False
@@ -42,7 +42,7 @@ while running:
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
                 bomb_player_one.bomb(screen)
-=======
+
         trigger = pg.key.get_pressed()
 
     if trigger[pg.K_w] and char1.posY > char1.vel:
@@ -55,7 +55,7 @@ while running:
 
     if trigger[pg.K_d] and char1.posX + char1.vel + char1.width < width:
         char1.posX += char1.vel
->>>>>>> Test
+
 
 
 
