@@ -4,21 +4,22 @@ import numpy as np
 
 class Level:
 
-    def __init__(self, sizeX, sizeY, posX, posY, objects):
+    def __init__(self, sizeX, sizeY, posX, posY, objects, screen):
         self.sizeX = sizeX
         self.sizeY = sizeY
         self.posX = posX
         self.posY = posY
         self.objects = objects
+        self.screen = screen
 
     # level
-    def level(self, screen):
+    def level(self):
         # assigning a color
         white = (255, 255, 255)
-        pg.draw.rect(screen, white, (217, 117, 480, 480))
+        pg.draw.rect(self.screen, white, (217, 117, 480, 480))
 
     # position grid
-    def postitional_grid(self, screen):
+    def postitional_grid(self):
         # assigning a color
         black = (0, 0, 0)
         # for loop that, creates a grid from start of level edge to the end
@@ -27,7 +28,7 @@ class Level:
                 # assigning a pygame function that draws a rectangle
                 rect = pg.Rect(217 + i * 32, 117 + j * 32, 32, 32)
                 # using methods from pygame to draw a rectangle on the src screen,
-                pg.draw.rect(screen, black, rect, 1)
+                pg.draw.rect(self.screen, black, rect, 1)
 
     def level2(self):
         pass
