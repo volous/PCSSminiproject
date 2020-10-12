@@ -31,10 +31,10 @@ class Level:
                 rect = pg.Rect(217 + i * block_size, 117 + j * block_size, block_size, block_size)
                 # using methods from pygame to draw a rectangle on the src screen,
                 pg.draw.rect(self.screen, black, rect, 1)
-        for i in range(0, 480):
-            for j in range(0, 480):
-                rect = pg.Rect((217+block_size) + i * block_size, (117+block_size) + j * block_size, block_size, block_size)
-                pg.draw.rect(self.screen, (125, 125, 125), rect, 1)
+        # for i in range(0, 480):
+        #     for j in range(0, 480):
+        #         rect = pg.Rect((217+block_size) + i * block_size, (117+block_size) + j * block_size, block_size, block_size)
+        #         pg.draw.rect(self.screen, (125, 125, 125), rect, 1)
     def level2(self):
         pass
 
