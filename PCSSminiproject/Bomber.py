@@ -23,12 +23,12 @@ class Bomb:
         # same timer as in timer method
         while secs > 0 and self.timer_start:
             # if statements that check for the timer position and prints the corespondent state
-            if secs == 5 and self.timer_start:
-                screen.blit(self.bomb_state_one, (round(10), round(10)))
-            if secs == 3 and self.timer_start:
-                screen.blit(self.bomb_state_two, (round(10), round(10)))
-            if secs == 1 and self.timer_start:
-                screen.blit(self.bomb_state_three, (round(10), round(10)))
+            if secs == 4:
+                print(self.bomb_state[0])
+            if secs == 3:
+                print(self.bomb_state[1])
+            if secs == 2:
+                print(self.bomb_state[2])
 
         secs -= 1
         time.sleep(1)

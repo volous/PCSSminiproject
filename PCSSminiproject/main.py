@@ -57,6 +57,17 @@ while running:
         char1.posX += char1.vel
 
 
+        # if the window closes, it gets closed properly
+        if event.type == pg.QUIT:
+            running = False
+        # if a key is pressed down event is triggered
+        if event.type == pg.KEYDOWN:
+            # if key pressed is space the timer_start is set to true
+            if event.key == pg.K_SPACE:
+                bomb_player_one.timer_start = True
+                bomb_player_one.bomb(screen)
+
+
 
 
 
