@@ -2,7 +2,7 @@ import _thread
 import pygame as pg
 from Bomber import Bomb
 from Character import Character
-from Mainlevel import Level
+from Mlevel import Level
 
 # initialize the pygame
 pg.init()
@@ -14,7 +14,7 @@ screen = pg.display.set_mode((width, height))
 # instantiating Bomb class
 bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 # instantiating Char class
-char1 = Character(int(width/2), int(height/2))
+char1 = Character(249, 149)
 level = Level(0, 0, 0, 0, 0, screen)
 
 
