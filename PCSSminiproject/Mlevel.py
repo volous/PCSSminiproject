@@ -61,12 +61,12 @@ class Level:
                 pg.draw.rect(self.screen, grey, wall_rect_vert, 0)
                 wall_rect_hori = pg.Rect(217 + i * 448, 117 + j * block_size, block_size, block_size)
                 pg.draw.rect(self.screen, grey, wall_rect_hori)
-                if pg.sprite.collide_rect(wall_rect_hori, player):
-                    hit = True
-                    print("hit")
-                else:
-                    hit = False
-                    print("not hit")
+                # if pg.sprite.collide_rect(wall_rect_hori, player):
+                #     hit = True
+                #     print("hit")
+                # else:
+                #     hit = False
+                #     print("not hit")
 
 
 

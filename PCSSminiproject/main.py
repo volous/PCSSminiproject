@@ -15,7 +15,7 @@ screen = pg.display.set_mode((width, height))
 bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 # instantiating Char class
 char1 = Character(249, 149)
-level = Level(0, 0, 0, 0, 0, screen)
+level = Level(0, 0, 0, 0, 0, screen, char1)
 
 
 running = True
@@ -85,6 +85,7 @@ while running:
             bomb_player_one.bomb()
     # screen.fill((0,0,0))
     level.level()
-    level.postitional_grid()
+    level.positional_grid()
+    level.impassible_blocks()
     pg.draw.rect(screen, (255, 0, 0), (char1.posX, char1.posY, char1.width, char1.height))
     pg.display.update()
