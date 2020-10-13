@@ -72,7 +72,7 @@ while running:
         if event.key == pg.K_SPACE:
             bomb_player_one.timer_start = True
             bomb_player_one.bomb()
-    screen.fill((0,0,0))
+    # screen.fill((0,0,0))
     level.level()
     level.postitional_grid()
     pg.draw.rect(screen, (255, 0, 0), (char1.posX, char1.posY, char1.width, char1.height))
