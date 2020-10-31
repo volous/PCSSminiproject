@@ -13,23 +13,25 @@ class Bomb:
         self.bReload = bReload
         self.timer_start = False
         self.bomb_state_one = pygame.image.load("Res/bomb1.png")
+        # pygame.transform.scale(self.bomb_state_one, (32, 32))
         self.bomb_state_two = pygame.image.load("Res/bomb2.png")
         self.bomb_state_three = pygame.image.load("Res/bomb3.png")
+        self.bomb_state = [self.bomb_state_one, self.bomb_state_two, self.bomb_state_three]
 
 
     def bomb(self, screen):
         # sets secs to be equal to bSecs
+        bomb_state = self.bomb_state
         secs = self.bSecs
         # same timer as in timer method
         while secs > 0 and self.timer_start:
             # if statements that check for the timer position and prints the corespondent state
             if secs == 4:
-                print(self.bomb_state[0])
+                screen.blit(bomb_state[0])
             if secs == 3:
-                print(self.bomb_state[1])
+                screen.blit(bomb_state[0])
             if secs == 2:
-                print(self.bomb_state[2])
-
+                screen.blit(bomb_state[0])
         secs -= 1
         time.sleep(1)
 

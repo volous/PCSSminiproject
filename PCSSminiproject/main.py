@@ -14,16 +14,19 @@ screen = pg.display.set_mode((width, height))
 # instantiating Bomb class
 bomb_player_one = Bomb(bRadX, bRadY, True, 5, True)
 # instantiating Char class
-char1 = Character(249, 149)
-level = Level(0, 0, 0, 0, 0, screen, char1)
+char1 = Character(249, 149, screen)
+level = Level(0, 0, 0, 0, screen)
 
 
 running = True
 # game loop-ish
 while running:
 
-    screen.fill((255, 255, 255))
-
+    screen.fill((0, 0, 0))
+    level.level()
+    level.positional_grid()
+    level.impassible_blocks()
+    char1.draw_char()
     pg.time.delay(100)
 
     # timer is available from start, but when an event type of keydown on space, timer_start from bomb class is set
@@ -66,6 +69,9 @@ while running:
             if event.key == pg.K_SPACE:
                 bomb_player_one.timer_start = True
                 bomb_player_one.bomb(screen)
+        if level.positional_array[0] + level.block_size is char1.posX is level.positional_array[0]:
+            print("hit")
+
 
 
 
@@ -83,9 +89,6 @@ while running:
         if event.key == pg.K_SPACE:
             bomb_player_one.timer_start = True
             bomb_player_one.bomb()
-    # screen.fill((0,0,0))
-    level.level()
-    level.positional_grid()
-    level.impassible_blocks()
-    pg.draw.rect(screen, (255, 0, 0), (char1.posX, char1.posY, char1.width, char1.height))
+
+
     pg.display.update()
